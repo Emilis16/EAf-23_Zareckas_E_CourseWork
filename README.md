@@ -1,1 +1,1 @@
-EAf-23 Emilis Zareckas Expens Tracker.
+EAf-23 Emilis Zareckas Expense Tracker.
