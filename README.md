@@ -1,1 +1,1 @@
-EAf-23 Course Work
+EAf-23 Emilis Zareckas Expens Tracker.
