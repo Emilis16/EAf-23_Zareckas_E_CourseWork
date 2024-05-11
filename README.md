@@ -19,3 +19,10 @@ A program that tracks all your expenses, categorizes them, and displays the expe
 - To see all expenses, select option "3" and enter your name.
 - Additionally, the program allows you to view expenses by category by selecting option "4".
 - Finally, the summary function enables you to see your total income, total expenses, and remaining budget.
+
+## Code analysis
+My program use 4 object-oriented programming pillars:
+- Polymorphism: Class "BudgetTracker" is inheriting from Class "FinancialTracker', allowing instances of BudgetTracker to be treated as instances of FinancialTracker.
+- Abstraction: The "FinancialTracker" class provides an abstraction for managing finances through methods like add_user, hiding the implementation details of how user data is stored and managed.
+- Inheritance: "BudgetTracker" inherits from "FinancialTracker", acquiring its attributes and methods. This allows BudgetTracker to reuse functionality defined in FinancialTracker.
+- Encapsulation: Data like "finances" is encapsulated within the "FinancialTracker" class, and access to it is controlled through methods like add_user, ensuring that the data remains consistent and protected from external manipulation.
