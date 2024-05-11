@@ -24,12 +24,34 @@ A program that tracks all your expenses, categorizes them, and displays the expe
 My program use 4 object-oriented programming pillars:
 - Polymorphism: Class "BudgetTracker" is inheriting from Class "FinancialTracker', allowing instances of BudgetTracker to be treated as instances of FinancialTracker.
 - Abstraction: The "FinancialTracker" class provides an abstraction for managing finances through methods like add_user, hiding the implementation details of how user data is stored and managed.
+
+            class FinancialTracker:
+                def __init__(self):
+                    self.finances = {}
+
+                def add_user(self, name, initial_income):
+                    if name not in self.finances:
+                        self.finances[name] = {'initial_income': initial_income, 'transactions': []}
+                        print('User {} added.'.format(name))
+                    else:
+                        print('User {} already exists.'.format(name))
 - Inheritance: "BudgetTracker" inherits from "FinancialTracker", acquiring its attributes and methods. This allows BudgetTracker to reuse functionality defined in FinancialTracker.
 
             class BudgetTracker(FinancialTracker):
                 def __init__(self):
                     super().__init__()
 - Encapsulation: Data like "finances" is encapsulated within the "FinancialTracker" class, and access to it is controlled through methods like add_user, ensuring that the data remains consistent and protected from external manipulation.
+
+            class FinancialTracker:
+                def __init__(self):
+                    self.finances = {}
+
+                def add_user(self, name, initial_income):
+                    if name not in self.finances:
+                        self.finances[name] = {'initial_income': initial_income, 'transactions': []}
+                        print('User {} added.'.format(name))
+                    else:
+                        print('User {} already exists.'.format(name))
 
 Design patterns:
 Decorator:
