@@ -28,8 +28,10 @@ My program use 4 object-oriented programming pillars:
 - Encapsulation: Data like "finances" is encapsulated within the "FinancialTracker" class, and access to it is controlled through methods like add_user, ensuring that the data remains consistent and protected from external manipulation.
 
 Design patterns:
-Decorator: The "LoggingDecorator" class decorates instances of "FinancialTracker", enhancing their behavior by adding logging functionality to methods like load_data, save_data, etc. This is achieved by composing an instance of FinancialTracker within LoggingDecorator and delegating method calls to it.
+Decorator:
       class LoggingDecorator(FinancialTracker):
-          def __init__(self, tracker):
-              super().__init__()
-              self._tracker = tracker
+    def __init__(self, tracker):
+        super().__init__()
+        self._tracker = tracker
+
+
