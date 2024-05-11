@@ -34,6 +34,6 @@ Decorator:
     def __init__(self, tracker):
         super().__init__()
         self._tracker = tracker
-The LoggingDecorator class decorates instances of FinancialTracker, enhancing their behavior by adding logging functionality to methods like load_data, save_data, etc. This is achieved by composing an instance of FinancialTracker within LoggingDecorator and delegating method calls to it.
+The "LoggingDecorator" class decorates instances of "FinancialTracker", enhancing their behavior by adding logging functionality to methods like "load_data", "save_data", etc. This is achieved by composing an instance of "FinancialTracker" within "LoggingDecorator" and delegating method calls to it.
 
 
