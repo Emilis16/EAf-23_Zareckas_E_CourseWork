@@ -1,1 +1,3 @@
-EAf-23 Emilis Zareckas "Expense Tracker".
+# Expense Tracker
+# By Emilis Zareckas EAf-23
+## Description
