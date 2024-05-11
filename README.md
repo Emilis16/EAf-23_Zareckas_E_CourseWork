@@ -30,8 +30,8 @@ My program use 4 object-oriented programming pillars:
 Design patterns:
 Decorator:
             \class LoggingDecorator(FinancialTracker):
-          def __init__(self, tracker):
-              super().__init__()
-              self._tracker = tracker\
+            \def __init__(self, tracker):
+              \super().__init__()
+              \self._tracker = tracker
 
 
