@@ -83,6 +83,7 @@ What I successfully implemented:
 - Writing and reading from JSON file.
 - Used all 4 object-oriented programming pillars.
 - Code unittest.
+
 What I didn't implement:
 - I used only one design pattern instead of two.
 
