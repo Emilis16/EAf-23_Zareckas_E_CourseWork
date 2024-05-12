@@ -23,6 +23,20 @@ A program that tracks all your expenses, categorizes them, and displays the expe
 ## Code analysis
 My program use 4 object-oriented programming pillars:
 - Polymorphism: Class "BudgetTracker" is inheriting from Class "FinancialTracker', allowing instances of BudgetTracker to be treated as instances of FinancialTracker.
+
+            class BudgetTracker(FinancialTracker):
+                def __init__(self):
+                    super().__init__()
+
+            class LoggingDecorator(FinancialTracker):
+                def __init__(self, tracker):
+                    super().__init__()
+                    self._tracker = tracker
+
+                def load_data(self, file_path):
+                    print("Logging: Loading data...")
+                    self._tracker.load_data(file_path)
+
 - Abstraction: The "FinancialTracker" class provides an abstraction for managing finances through methods like add_user, hiding the implementation details of how user data is stored and managed.
 
             class FinancialTracker:
