@@ -70,13 +70,66 @@ My program use 4 object-oriented programming pillars:
                         print('User {} already exists.'.format(name))
 
 Design patterns:
-Decorator:
+- Decorator:
 
             class LoggingDecorator(FinancialTracker):
-    def __init__(self, tracker):
-        super().__init__()
-        self._tracker = tracker
+                def __init__(self, tracker):
+                    super().__init__()
+                    self._tracker = tracker
 The "LoggingDecorator" class decorates instances of "FinancialTracker", enhancing their behavior by adding logging functionality to methods like "load_data", "save_data", etc. This is achieved by composing an instance of "FinancialTracker" within "LoggingDecorator" and delegating method calls to it.
+
+Unittest:
+- Test adding a user:
+
+            self.tracker.add_user("Alice", 2000)
+            self.assertIn("Alice", self.tracker.finances)
+            self.assertEqual(self.tracker.finances["Alice"]["initial_income"], 2000)
+
+- Test adding an expense:
+
+            self.tracker.add_user("Bob", 2500)
+            self.tracker.expense("Bob", "Groceries", 100, "Food")
+            self.assertEqual(len(self.tracker.finances["Bob"]["transactions"]), 1)
+
+- Test getting expenses by category:
+
+            self.tracker.add_user("Charlie", 3000)
+            self.tracker.expense("Charlie", "Rent", 1000, "Housing")
+            self.tracker.expense("Charlie", "Groceries", 200, "Food")
+            expenses = self.tracker.get_expense_by_category("Charlie", "Food")
+            self.assertEqual(len(expenses), 1)
+            self.assertEqual(expenses[0]["description"], "Groceries")
+
+- Test getting total income:
+
+            self.tracker.add_user("Dave", 4000)
+            income = self.tracker.get_total_income("Dave")
+            self.assertEqual(income, 4000)
+
+- Clean up data file:
+
+            if os.path.exists(self.data_file):
+            os.remove(self.data_file)
+
+- Test getting budget summary:
+
+            self.tracker.add_user("Eve", 5000)
+            self.tracker.expense("Eve", "Rent", 1500, "Housing")
+            self.tracker.expense("Eve", "Groceries", 300, "Food")
+            self.tracker.expense("Eve", "Entertainment", 200, "Fun")
+            expected_income = 5000
+            expected_expenses = 1500 + 300 + 200
+            expected_remaining_budget = expected_income - expected_expenses
+            self.tracker.get_budget_summary("Eve")
+            self.assertEqual(self.tracker.get_total_income("Eve"), expected_income)
+            self.assertEqual(expected_expenses, sum(expense["amount"]
+                                                for expense in self.tracker.finances["Eve"]["transactions"]))
+            self.assertEqual(expected_remaining_budget, expected_income - expected_expenses)
+
+- Clean up data file:
+
+            if os.path.exists(self.data_file):
+                        os.remove(self.data_file)
 
 ## Results
 What I successfully implemented:
