@@ -28,6 +28,8 @@ My program use 4 object-oriented programming pillars:
                 def __init__(self):
                     super().__init__()
 
+####################################################################
+
             class LoggingDecorator(FinancialTracker):
                 def __init__(self, tracker):
                     super().__init__()
