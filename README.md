@@ -79,8 +79,12 @@ Decorator:
 The "LoggingDecorator" class decorates instances of "FinancialTracker", enhancing their behavior by adding logging functionality to methods like "load_data", "save_data", etc. This is achieved by composing an instance of "FinancialTracker" within "LoggingDecorator" and delegating method calls to it.
 
 ## Results
-- Unfortunately I used only one design pattern instead of two.
-- Decorator design pattern wasn't neccesary I used it only because of the requirements.
+What I successfully implemented:
+- Writing and reading from JSON file.
+- Used all 4 object-oriented programming pillars.
+- Code unittest.
+What I didn't implement:
+- I used only one design pattern instead of two.
 
 ## Conclusion
 - My program is a great simple tool to track expenses. It can do basic functions such as adding expenses, showing all or categorised expenses, and remaining budget, for multiple users. However, there are a few improvements that could be made, such as error handling for invalid input and better separation of concerns between the decorator and the tracked object. Additionally, logging could be enhanced to provide more detailed information about the operations being performed.
